@@ -1,4 +1,5 @@
 from app import app
+from flask import render_template
 
 @app.route('/ping')
 def ping():
@@ -6,4 +7,4 @@ def ping():
 
 @app.route('/')
 def home():
-    return {'result': 'Hello World!'}
+    return render_template('index.html')
