@@ -9,11 +9,15 @@
 <body>
     <div class="wrapper">
         <nav>
-            <li>Booky</li>
-            <li>Profile</li>
-            <li>Books</li>
-            <li>Clubs</li>
+            <li>
+                <a href="/"><span>Bo</span>oky</a>
+                <div id="logo-border"></div>
+            </li>
+            <li><a href="/profile"></a>Profile</a></li>
+            <li><a href="/books"></a>Books</a></li>
+            <li><a href="/clubs"></a>Clubs</a></li>
         </nav>
+        <hr id="navline">
         {% block main %}
         {% endblock %}
     </div>
