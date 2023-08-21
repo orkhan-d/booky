@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
 </head>
 <body>
     <div class="wrapper">
         <nav>
-            <li>
-                <a href="/"><span>Bo</span>oky</a>
-                <div id="logo-border"></div>
-            </li>
-            <li><a href="/profile"></a>Profile</a></li>
-            <li><a href="/books"></a>Books</a></li>
-            <li><a href="/clubs"></a>Clubs</a></li>
+            <li><a href="/">
+                    <img src="{{ url_for('static', filename='img/booky-logo.svg') }}" alt="">
+            </a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/books">Books</a></li>
+            <li><a href="/clubs">Clubs</a></li>
         </nav>
         <hr id="navline">
         {% block main %}
