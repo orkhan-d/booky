@@ -3,7 +3,7 @@ from fastapi import APIRouter
 from src.modules.auth.exceptions import InvalidCredentials
 from .schemas import RegisterData, LoginData
 
-from .utils import get_user_by_email, create_user
+from .utils import check_password, get_user_by_email, create_user
 
 router = APIRouter(tags=["auth"], prefix="/auth")
 
@@ -15,6 +15,6 @@ async def register(data: RegisterData):
 @router.post("/login")
 async def login(data: LoginData):
     user = get_user_by_email(data.email)
-    if user is None or user.password != data.password:
+    if user is None or not check_password(data.password, user.password):
         raise InvalidCredentials()
     return user
